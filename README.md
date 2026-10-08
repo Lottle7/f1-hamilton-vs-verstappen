@@ -2,6 +2,16 @@
 
 汉密尔顿与维斯塔潘 2016–2026 交手全记录的静态网页。**单页、零依赖、完全离线可用**——双击 `index.html` 即可浏览，不需要服务器或网络。
 
+> ## ⚠️ 图片版权声明
+>
+> 本仓库 `assets/` 目录内的 **55 张图片全部来自 Formula 1 官方媒体库**（`media.formula1.com`），
+> 摄影版权属 **Formula One Licensing B.V. 与 Getty Images**，**并非本项目作者所有**。
+>
+> 这些图片仅用于个人学习与非商业的数据可视化演示。若你 fork、转载或再分发本仓库，
+> 请自行承担相应的版权责任 —— 建议先替换为你自有或已获授权的图片。
+>
+> 页面中的**代码、样式与全部数据整理**为本项目原创内容。
+
 ![sections](https://img.shields.io/badge/sections-6-ff4a5c) ![offline](https://img.shields.io/badge/network-none%20required-2f7dff) ![size](https://img.shields.io/badge/page-65%20KB-f0c419)
 
 ## 内容
@@ -50,14 +60,25 @@ powershell -ExecutionPolicy Bypass -File .\fetch-assets.ps1   # 从 F1 官方媒
 python .\crop-portraits.py                                    # 裁切车手肖像为 3:4 头肩构图
 ```
 
-## ⚠️ 图片版权
+## 图片版权
 
-`assets/` 内的 55 张图片来自 **Formula 1 官方媒体库**（`media.formula1.com`），摄影版权属 **Formula One Licensing B.V. 及 Getty Images** 所有，此处仅用于个人学习与数据可视化演示。
+`assets/` 内的 55 张图片来自 **Formula 1 官方媒体库**（`media.formula1.com`），摄影版权属 **Formula One Licensing B.V. 及 Getty Images** 所有，仅用于个人学习与数据可视化演示。完整声明见本文档顶部。
 
-**公开发布或商业使用前请自行评估版权风险**，建议：
-- 设为私有仓库（private），或
-- 替换为自有图片 / 占位图，或
-- 仅保留代码，移除 `assets/`
+若要移除图片：把 `.gitignore` 里加一行 `assets/` 重新提交即可，页面代码本身不依赖任何图片即可运行。
+
+## 发布到 GitHub Pages
+
+```bash
+# 1. 在 github.com/new 创建空仓库（不要勾选 README / .gitignore）
+# 2. 关联并推送
+git remote add origin git@github.com:Lottle7/f1-hamilton-vs-verstappen.git
+git push -u origin main
+
+# 3. 开启 Pages
+#    仓库 Settings → Pages → Source 选 main 分支 / root
+```
+
+访问地址将是 `https://lottle7.github.io/f1-hamilton-vs-verstappen/`。
 
 ## 技术栈
 
