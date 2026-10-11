@@ -534,19 +534,19 @@ html.js .rv.in{opacity:1;transform:none}
   <div class="sec-head rv">
     <span class="sec-num">03</span>
     <h2 class="sec-title">2026 赛季 · 逐站分页</h2>
-    <p class="sec-desc">点选任意分站查看赛道实景、冠军归属、冲刺赛结果与那一轮两人谁跑在前面。已完成 16 站正赛 + 6 场冲刺赛。</p>
+    <p class="sec-desc">点选任意分站查看赛道实景、冠军归属、冲刺赛结果与那一轮两人谁跑在前面。已完成 17 站正赛 + 6 场冲刺赛。</p>
   </div>
   <div class="stand rv">
-    <div class="sbox a lead"><div class="p">领跑者</div><div class="n">325</div><div class="d">Kimi Antonelli · 梅赛德斯</div></div>
-    <div class="sbox h"><div class="p">第 3 位</div><div class="n">221</div><div class="d">Lewis Hamilton · 法拉利 · 1 胜</div></div>
-    <div class="sbox v"><div class="p">第 5 位</div><div class="n">196</div><div class="d">Max Verstappen · 红牛 · 1 胜</div></div>
-    <div class="sbox"><div class="p">领先差距</div><div class="n">104</div><div class="d">汉密尔顿落后安东内利</div></div>
+    <div class="sbox a lead"><div class="p">领跑者</div><div class="n">340</div><div class="d">Kimi Antonelli · 下一站奥斯汀即可封号</div></div>
+    <div class="sbox h"><div class="p">第 3 位</div><div class="n">229</div><div class="d">Lewis Hamilton · 法拉利 · 1 胜</div></div>
+    <div class="sbox v"><div class="p">第 4 位</div><div class="n">221</div><div class="d">Max Verstappen · 红牛 · 2 胜</div></div>
+    <div class="sbox"><div class="p">领先差距</div><div class="n">111</div><div class="d">汉密尔顿落后安东内利</div></div>
   </div>
   <div class="tallywrap rv">
     <div class="tally">
       <div class="side h"><div class="n">8</div><div class="l">正赛<br>汉密尔顿排名更靠前</div></div>
-      <div class="eq">16 站<br>正赛对决</div>
-      <div class="side v"><div class="n">8</div><div class="l">正赛<br>维斯塔潘排名更靠前</div></div>
+      <div class="eq">17 站<br>正赛对决</div>
+      <div class="side v"><div class="n">9</div><div class="l">正赛<br>维斯塔潘<b>首次领先</b></div></div>
     </div>
     <div class="tally">
       <div class="side h"><div class="n">3</div><div class="l">冲刺赛<br>汉密尔顿排名更靠前</div></div>
@@ -609,7 +609,7 @@ html.js .rv.in{opacity:1;transform:none}
 </section>
 
 <footer>
-  <b>数据截至 2026 年 10 月 11 日</b>（第 17 轮新加坡站 · 冲刺赛已结束，正赛待跑）。<br>
+  <b>数据截至 2026 年 10 月 11 日</b>（第 17 轮新加坡站正赛已结束）。<br>
   积分、胜场、领奖台、杆位等累计数据取自 Formula 1 官方统计；2026 赛季逐站对决结果已逐场核对。<br>
   部分数据库在领奖台 / 杆位总数上存在 1–2 场的统计差异。摩纳哥与赞德沃特两站维斯塔潘均因起步阶段技术故障 0 圈退赛。<br>
   <b>图片来源：</b>Formula 1 官方媒体库，摄影版权属 Formula One Licensing B.V. 及 Getty Images 所有，此处仅作数据展示用途。<br>
@@ -675,20 +675,20 @@ const SEASONS=[
   champ:'Lando Norris · 迈凯伦', fr:'', tag:'诺里斯爆冷夺冠', tc:'n',
   frList:[],
   blurb:'格局第三次重写。诺里斯 7 胜、423 分<b>首夺世界冠军</b>；维斯塔潘赢下 8 场、拿到 421 分，却<b>以 2 分之差饮恨第 5 冠</b>。汉密尔顿 156 分、0 胜跌至第 6 —— 生涯最惨淡的赛季之一。'},
- {y:2026,hp:3,hpt:221,hw:1, vp:5,vpt:196,vw:1,now:1,
-  champ:'Kimi Antonelli · 梅赛德斯（进行中）', fr:'', tag:'进行中 16/23', tc:'n',
-  frList:[['雪邦（马来西亚）','v']],
-  blurb:'新规元年的战局已与争冠无关：安东内利拿下 <b>325 分</b>大幅领跑。维斯塔潘在雪邦夺杆夺冠，终结赛季前三站不胜，也是<b>红牛-福特动力的首场胜利</b>，并在新加坡冲刺赛再度杆位夺冠。16 站正赛两人 <b>8 : 8</b> 打成平手，6 场冲刺赛同样 <b>3 : 3</b>。'}
+ {y:2026,hp:3,hpt:229,hw:1, vp:4,vpt:221,vw:2,now:1,
+  champ:'Kimi Antonelli · 梅赛德斯（进行中）', fr:'', tag:'进行中 17/23', tc:'n',
+  frList:[['雪邦（马来西亚）','v'],['新加坡','v']],
+  blurb:'安东内利 <b>340 分</b>大幅领跑，下一站奥斯汀即可封号。但真正的故事是维斯塔潘：他在雪邦与新加坡<b>背靠背夺冠</b>，拿下生涯首个新加坡站胜利，积分榜升至第 4、<b>距汉密尔顿仅 8 分</b>。汉密尔顿这边因新加坡的策略失误丢掉领奖台。17 站正赛两人 <b>8 : 9</b>，维斯塔潘首次领先；6 场冲刺赛 <b>3 : 3</b>。'}
 ];
 
 const ROUNDS=[
- {r:1, cn:'澳大利亚大奖赛', en:'Albert Park · 墨尔本', date:'3 月 8 日', done:1, win:'George Russell · 梅赛德斯', h:'P4', v:'P6', w:'v', gap:'维斯塔潘快 38.473 秒',
+ {r:1, cn:'澳大利亚大奖赛', en:'Albert Park · 墨尔本', date:'3 月 8 日', done:1, win:'George Russell · 梅赛德斯', h:'P4', v:'P6', w:'h', gap:'汉密尔顿快 38.473 秒',
   cap:'Albert Park Grand Prix Circuit, Melbourne',
-  note:'维斯塔潘从第 20 位发车起步抢到最快圈，两人完赛相差近 39 秒。'},
+  note:'维斯塔潘从第 20 位发车起步，仍跑出全场最快圈，但被甩在汉密尔顿身后 38 秒。'},
  {r:2, cn:'中国大奖赛', en:'上海国际赛车场', date:'3 月 15 日', done:1, win:'Kimi Antonelli · 梅赛德斯', h:'P3', v:'退赛', w:'h', gap:'维斯塔潘第 45 圈退赛', sp:{h:'P3',v:'P9',w:'h'},
   cap:'Shanghai International Circuit',
   note:'安东内利赛季首胜。维斯塔潘退赛，汉密尔顿首次登上领奖台。冲刺赛两人分列三四。'},
- {r:3, cn:'日本大奖赛', en:'铃鹿赛道', date:'3 月 29 日', done:1, win:'Kimi Antonelli · 梅赛德斯', h:'P6', v:'P8', w:'v', gap:'维斯塔潘快 7.640 秒',
+ {r:3, cn:'日本大奖赛', en:'铃鹿赛道', date:'3 月 29 日', done:1, win:'Kimi Antonelli · 梅赛德斯', h:'P6', v:'P8', w:'h', gap:'汉密尔顿快 7.640 秒',
   cap:'Suzuka International Racing Course',
   note:'安东内利三连胜。两人均从维修区起步，中段差距被迅速拉开。'},
  {r:4, cn:'迈阿密大奖赛', en:'迈阿密国际赛道', date:'5 月 3 日', done:1, win:'Kimi Antonelli · 梅赛德斯', h:'P6', v:'P5', w:'v', gap:'维斯塔潘快 4.804 秒', sp:{h:'P7',v:'P5',w:'v'},
@@ -732,9 +732,9 @@ const ROUNDS=[
   hero:S("malaysia"),
   cap:'Sepang International Circuit, Kuala Lumpur',
   note:'维斯塔潘杆位 + 夺冠，终结赛季前三站不胜，也是红牛-福特动力时代的首场胜利。'},
- {r:17,cn:'新加坡大奖赛', en:'滨海湾街道赛道 · 冲刺赛', date:'10 月 11 日', done:0, partial:1, sp:{h:'P2',v:'P1',w:'v'}, spDone:1,
+ {r:17,cn:'新加坡大奖赛', en:'滨海湾街道赛道 · 冲刺赛', date:'10 月 11 日', done:1, win:'Max Verstappen · 红牛', h:'P6', v:'冠军', w:'v', gap:'维斯塔潘快 53.188 秒', sp:{h:'P2',v:'P1',w:'v'},
   cap:'Marina Bay Street Circuit, Singapore',
-  note:'<b>10 月 10 日冲刺赛：维斯塔潘杆位夺冠，汉密尔顿 P2 落后 2.591 秒</b>，并跑出全场最快圈。正赛于 10 月 11 日举行，本站是安东内利最早可能的加冕地。'},
+  note:'<b>维斯塔潘杆位夺冠，拿下生涯首个新加坡站胜利</b>，62 圈从头领先到尾；加上昨天的冲刺赛，他在 Marina Bay 完成双杀。汉密尔顿打了一场噩梦：第 19 圈首个进站后速度明显更快，换胎后请求让队友先行被拒；第 39 圈虚拟安全车让他得以延长一停，结果在 20 圈胎龄的软胎上不断掉速，最终丢掉 P3 起步位，终结 P6。'},
  {r:18,cn:'美国大奖赛', en:'奥斯汀 · 冲刺赛', date:'10 月 25 日', done:0,
   cap:'Circuit of the Americas, Austin',
   note:'安东内利最早可能加冕的地点。'},
@@ -765,7 +765,7 @@ const MOMENTS=[
   img:S("podium"),
   cap:'2026 加拿大站领奖台：安东内利夺冠，汉密尔顿与维斯塔潘分列二、三位'},
  {y:'2026 · 10', t:'雪邦 · 红牛-福特首胜', c:'v', p:'维斯塔潘杆位 + 夺冠，终结赛季前三站不胜，也是红牛-福特动力时代的首场胜利。'},
- {y:'2026 · 10', t:'新加坡冲刺赛 · 又一个 3:3', c:'v', p:'杆位起步的维斯塔潘再次拿下冲刺赛冠军，汉密尔顿 P2 落后 2.591 秒并跑出全场最快圈。算上此前五场，<b>两人的六场冲刺赛对决正好 3 : 3</b> —— 与正赛的 8 : 8 一样，谁都没能真正压过对方。'}
+ {y:'2026 · 10', t:'新加坡 · 首个 Marina Bay 冠军', c:'v', p:'杆位起步、全程领跑 62 圈拿下冠军，<b>维斯塔潘首次赢下新加坡大奖赛</b>，并与前一天的冲刺赛冠军一起完成双杀。他的积分由此升至第 4，<b>距汉密尔顿只剩 8 分</b> —— 两人 17 站正赛对决，维斯塔潘以 9 : 8 首次领先。'}
 ];
 
 /* ── drivers ── */
@@ -793,12 +793,12 @@ const HAM={name:'Lewis Hamilton',team:'Scuderia Ferrari',nat:'英国',num:'44',c
  dossier:[['出生','1985-01-07 · 斯蒂夫尼奇'],['生涯积分','5,232.5'],['生涯退赛','35 场'],['2026 冲刺赛','6 场 · 27 分 · 3 台 · 1 杆']]};
 const VER={name:'Max Verstappen',team:'Oracle Red Bull Racing',nat:'荷兰',num:'1',chassis:'2026 Red Bull RB22',
  portrait:IMG.verPortrait,car:IMG.verCar,
- stats:[{k:'世界冠军',v:'4'},{k:'分站胜利',v:'72'},{k:'领奖台',v:'135'},{k:'杆位',v:'49'},{k:'最快圈',v:'37'}],
+ stats:[{k:'世界冠军',v:'4'},{k:'分站胜利',v:'73'},{k:'领奖台',v:'136'},{k:'杆位',v:'50'},{k:'最快圈',v:'37'}],
  dossier:[['出生','1997-09-30 · 哈瑟尔特'],['生涯积分','3,632.5'],['生涯退赛','37 场'],['2026 冲刺赛','6 场 · 20 分 · 1 胜 · 1 台']]};
 document.getElementById('duelGrid').innerHTML =
  dcard('h',HAM)+'<div class="vsmid"><div class="x">VS</div><div class="ln"></div></div>'+dcard('v',VER);
 
-const CMP=[['世界冠军',7,4],['分站胜利',106,72],['领奖台',208,135],['杆位',104,49],['最快圈',69,37],['出赛场次',396,249]];
+const CMP=[['世界冠军',7,4],['分站胜利',106,73],['领奖台',208,136],['杆位',104,50],['最快圈',69,37],['出赛场次',396,250]];
 document.getElementById('cmpBars').innerHTML=CMP.map(([k,a,b])=>{
   const t=a+b;
   return `<div class="cbar"><span class="hv l">${a}</span>
