@@ -266,6 +266,28 @@ section{padding:92px 0;position:relative}
 .sitem.open .sgrid{border-top:1px solid rgba(255,255,255,.07);margin-top:2px}
 .sgrid{display:grid;grid-template-columns:1.6fr 1fr;gap:26px;padding:22px 20px 26px}
 
+/* ── 2026 standings + tallies ───────── */
+.stand{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:26px}
+.sbox{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--surface);
+  position:relative;overflow:hidden}
+.sbox.lead::after{content:"领跑";position:absolute;top:14px;right:14px;font-size:10px;letter-spacing:.14em;
+  color:var(--gold);border:1px solid rgba(240,196,25,.3);border-radius:5px;padding:2px 7px}
+.sbox .p{font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.sbox .n{font-size:34px;font-weight:800;letter-spacing:-.03em;margin-top:10px;line-height:1;
+  font-variant-numeric:tabular-nums}
+.sbox .d{font-size:12px;color:var(--muted2);margin-top:7px}
+.sbox.h .n{color:var(--ham2)} .sbox.v .n{color:var(--ver2)} .sbox.a .n{color:var(--gold)}
+.tallywrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:26px}
+.tally{display:flex;align-items:center;justify-content:center;gap:20px;
+  border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--surface)}
+.tally .side{text-align:center}
+.tally .side .n{font-size:42px;font-weight:800;line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.tally .side .l{font-size:11px;color:var(--muted);letter-spacing:.06em;margin-top:7px;line-height:1.5}
+.tally .side.h .n{color:var(--ham2)} .tally .side.v .n{color:var(--ver2)}
+.tally .eq{font-family:Impact,sans-serif;font-size:13px;letter-spacing:.1em;color:var(--muted2);
+  text-align:center;line-height:1.6}
+@media(max-width:760px){.tallywrap{grid-template-columns:1fr}}
+
 /* ── ROUND PAGINATION ───────────────── */
 .pager{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--surface);
   backdrop-filter:blur(14px)}
@@ -324,6 +346,12 @@ section{padding:92px 0;position:relative}
 .gapline .ic{font-style:normal;color:var(--gold);font-size:13px;line-height:1}
 .gapline span{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2)}
 .gapline b{font-size:13.5px;font-weight:700;margin-left:auto;color:#fff;font-variant-numeric:tabular-nums}
+.sprintline{display:none;margin-top:10px;align-items:baseline;gap:9px;padding:10px 14px;border-radius:11px;
+  background:rgba(240,196,25,.07);border:1px solid rgba(240,196,25,.24)}
+.sprintline .spl{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.sprintline b{font-size:13px;font-weight:700}
+.sprintline b.h{color:var(--ham2)} .sprintline b.v{color:var(--ver2)}
+.sprintline .spp{margin-left:auto;font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
 .note{font-size:12px;color:var(--muted2);margin-top:auto;padding-top:16px}
 .pnav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px;border-top:1px solid var(--line)}
 .pnav .btns{display:flex;gap:9px}
@@ -506,7 +534,25 @@ html.js .rv.in{opacity:1;transform:none}
   <div class="sec-head rv">
     <span class="sec-num">03</span>
     <h2 class="sec-title">2026 赛季 · 逐站分页</h2>
-    <p class="sec-desc">点选任意分站查看赛道实景、冠军归属，以及那一轮两人谁跑在前面。已完赛 16 站，直接对决 8–8 持平。</p>
+    <p class="sec-desc">点选任意分站查看赛道实景、冠军归属、冲刺赛结果与那一轮两人谁跑在前面。已完成 16 站正赛 + 6 场冲刺赛。</p>
+  </div>
+  <div class="stand rv">
+    <div class="sbox a lead"><div class="p">领跑者</div><div class="n">325</div><div class="d">Kimi Antonelli · 梅赛德斯</div></div>
+    <div class="sbox h"><div class="p">第 3 位</div><div class="n">221</div><div class="d">Lewis Hamilton · 法拉利 · 1 胜</div></div>
+    <div class="sbox v"><div class="p">第 5 位</div><div class="n">196</div><div class="d">Max Verstappen · 红牛 · 1 胜</div></div>
+    <div class="sbox"><div class="p">领先差距</div><div class="n">104</div><div class="d">汉密尔顿落后安东内利</div></div>
+  </div>
+  <div class="tallywrap rv">
+    <div class="tally">
+      <div class="side h"><div class="n">8</div><div class="l">正赛<br>汉密尔顿排名更靠前</div></div>
+      <div class="eq">16 站<br>正赛对决</div>
+      <div class="side v"><div class="n">8</div><div class="l">正赛<br>维斯塔潘排名更靠前</div></div>
+    </div>
+    <div class="tally">
+      <div class="side h"><div class="n">3</div><div class="l">冲刺赛<br>汉密尔顿排名更靠前</div></div>
+      <div class="eq">6 场<br>冲刺赛对决</div>
+      <div class="side v"><div class="n">3</div><div class="l">冲刺赛<br>维斯塔潘排名更靠前</div></div>
+    </div>
   </div>
   <div class="pager rv">
     <div class="strip" id="strip"></div>
@@ -524,6 +570,7 @@ html.js .rv.in{opacity:1;transform:none}
         <div class="verdict" id="stVerdict"></div>
         <div class="pair" id="stPair"></div>
         <div class="gapline" id="stGap"></div>
+        <div class="sprintline" id="stSprint"></div>
         <div class="note" id="stNote"></div>
       </div>
     </div>
@@ -562,7 +609,7 @@ html.js .rv.in{opacity:1;transform:none}
 </section>
 
 <footer>
-  <b>数据截至 2026 年 10 月 4 日</b>（第 16 轮 · 马来西亚巴林站）。<br>
+  <b>数据截至 2026 年 10 月 11 日</b>（第 17 轮新加坡站 · 冲刺赛已结束，正赛待跑）。<br>
   积分、胜场、领奖台、杆位等累计数据取自 Formula 1 官方统计；2026 赛季逐站对决结果已逐场核对。<br>
   部分数据库在领奖台 / 杆位总数上存在 1–2 场的统计差异。摩纳哥与赞德沃特两站维斯塔潘均因起步阶段技术故障 0 圈退赛。<br>
   <b>图片来源：</b>Formula 1 官方媒体库，摄影版权属 Formula One Licensing B.V. 及 Getty Images 所有，此处仅作数据展示用途。<br>
@@ -628,26 +675,26 @@ const SEASONS=[
   champ:'Lando Norris · 迈凯伦', fr:'', tag:'诺里斯爆冷夺冠', tc:'n',
   frList:[],
   blurb:'格局第三次重写。诺里斯 7 胜、423 分<b>首夺世界冠军</b>；维斯塔潘赢下 8 场、拿到 421 分，却<b>以 2 分之差饮恨第 5 冠</b>。汉密尔顿 156 分、0 胜跌至第 6 —— 生涯最惨淡的赛季之一。'},
- {y:2026,hp:3,hpt:214,hw:1, vp:6,vpt:188,vw:1,now:1,
+ {y:2026,hp:3,hpt:221,hw:1, vp:5,vpt:196,vw:1,now:1,
   champ:'Kimi Antonelli · 梅赛德斯（进行中）', fr:'', tag:'进行中 16/23', tc:'n',
   frList:[['雪邦（马来西亚）','v']],
-  blurb:'新规元年的战局已与争冠无关：安东内利 16 轮拿下 <b>320 分</b>大幅领跑，最早可在奥斯汀封号。维斯塔潘在雪邦夺杆夺冠，终结赛季前三站不胜，也是<b>红牛-福特动力的首场胜利</b>。两人 16 站直接对决 <b>8 : 8</b> 打成平手。'}
+  blurb:'新规元年的战局已与争冠无关：安东内利拿下 <b>325 分</b>大幅领跑。维斯塔潘在雪邦夺杆夺冠，终结赛季前三站不胜，也是<b>红牛-福特动力的首场胜利</b>，并在新加坡冲刺赛再度杆位夺冠。16 站正赛两人 <b>8 : 8</b> 打成平手，6 场冲刺赛同样 <b>3 : 3</b>。'}
 ];
 
 const ROUNDS=[
  {r:1, cn:'澳大利亚大奖赛', en:'Albert Park · 墨尔本', date:'3 月 8 日', done:1, win:'George Russell · 梅赛德斯', h:'P4', v:'P6', w:'v', gap:'维斯塔潘快 38.473 秒',
   cap:'Albert Park Grand Prix Circuit, Melbourne',
   note:'维斯塔潘从第 20 位发车起步抢到最快圈，两人完赛相差近 39 秒。'},
- {r:2, cn:'中国大奖赛', en:'上海国际赛车场', date:'3 月 15 日', done:1, win:'Kimi Antonelli · 梅赛德斯', h:'P3', v:'退赛', w:'h', gap:'维斯塔潘第 45 圈退赛',
+ {r:2, cn:'中国大奖赛', en:'上海国际赛车场', date:'3 月 15 日', done:1, win:'Kimi Antonelli · 梅赛德斯', h:'P3', v:'退赛', w:'h', gap:'维斯塔潘第 45 圈退赛', sp:{h:'P3',v:'P9',w:'h'},
   cap:'Shanghai International Circuit',
-  note:'安东内利赛季首胜。维斯塔潘退赛，汉密尔顿首次登上领奖台。'},
+  note:'安东内利赛季首胜。维斯塔潘退赛，汉密尔顿首次登上领奖台。冲刺赛两人分列三四。'},
  {r:3, cn:'日本大奖赛', en:'铃鹿赛道', date:'3 月 29 日', done:1, win:'Kimi Antonelli · 梅赛德斯', h:'P6', v:'P8', w:'v', gap:'维斯塔潘快 7.640 秒',
   cap:'Suzuka International Racing Course',
   note:'安东内利三连胜。两人均从维修区起步，中段差距被迅速拉开。'},
- {r:4, cn:'迈阿密大奖赛', en:'迈阿密国际赛道', date:'5 月 3 日', done:1, win:'Kimi Antonelli · 梅赛德斯', h:'P6', v:'P5', w:'v', gap:'维斯塔潘快 4.804 秒',
+ {r:4, cn:'迈阿密大奖赛', en:'迈阿密国际赛道', date:'5 月 3 日', done:1, win:'Kimi Antonelli · 梅赛德斯', h:'P6', v:'P5', w:'v', gap:'维斯塔潘快 4.804 秒', sp:{h:'P7',v:'P5',w:'v'},
   cap:'Miami International Autodrome',
-  note:'维斯塔潘从杆位起步守住第五，首次在 2026 赛季领先汉密尔顿完赛。'},
- {r:5, cn:'加拿大大奖赛', en:'吉尔·维利讷赛道 · 蒙特利尔', date:'5 月 24 日', done:1, win:'Kimi Antonelli · 梅赛德斯', h:'P2', v:'P3', w:'h', gap:'汉密尔顿快 0.508 秒',
+  note:'维斯塔潘从杆位起步守住第五，首次在 2026 赛季领先汉密尔顿完赛。冲刺赛他再度压过汉密尔顿。'},
+ {r:5, cn:'加拿大大奖赛', en:'吉尔·维利讷赛道 · 蒙特利尔', date:'5 月 24 日', done:1, win:'Kimi Antonelli · 梅赛德斯', h:'P2', v:'P3', w:'h', gap:'汉密尔顿快 0.508 秒', sp:{h:'P6',v:'P7',w:'h'},
   hero:S("hero"),
   cap:'Circuit Gilles-Villeneuve, Montreal',
   note:'<b>2026 赛季两人最接近的一次完赛</b>，仅差 0.508 秒。第 62 圈汉密尔顿从外线 1 号弯超越维斯塔潘，维斯塔潘贴身紧追到方格旗。'},
@@ -660,18 +707,18 @@ const ROUNDS=[
  {r:8, cn:'奥地利大奖赛', en:'红牛环', date:'6 月 28 日', done:1, win:'George Russell · 梅赛德斯', h:'P5', v:'P2', w:'v', gap:'维斯塔潘快 24.782 秒',
   cap:'Red Bull Ring, Spielberg',
   note:'维斯塔潘仅落后领奖台 1.6 秒，汉密尔顿在红牛主场被甩开 24 秒。'},
- {r:9, cn:'英国大奖赛', en:'银石赛道', date:'7 月 5 日', done:1, win:'Charles Leclerc · 法拉利', h:'P3', v:'退赛', w:'h', gap:'维斯塔潘第 46 圈退赛',
+ {r:9, cn:'英国大奖赛', en:'银石赛道', date:'7 月 5 日', done:1, win:'Charles Leclerc · 法拉利', h:'P3', v:'退赛', w:'h', gap:'维斯塔潘第 46 圈退赛', sp:{h:'P2',v:'P6',w:'h'},
   cap:'Silverstone Circuit',
-  note:'勒克莱克为法拉利捧回分站冠军。汉密尔顿仅落后 0.772 秒保住领奖台。'},
+  note:'勒克莱克为法拉利捧回分站冠军。汉密尔顿仅落后 0.772 秒保住领奖台。冲刺赛他从第 6 位起步拿到 P2。'},
  {r:10,cn:'比利时大奖赛', en:'斯帕-弗朗科尔尚', date:'7 月 19 日', done:1, win:'Kimi Antonelli · 梅赛德斯', h:'P4', v:'P3', w:'v', gap:'维斯塔潘快 5.659 秒',
   cap:'Circuit de Spa-Francorchamps',
   note:'维斯塔潘与汉密尔顿在斯帕缠斗整场，最终以 5.7 秒优势拿下领奖台。'},
  {r:11,cn:'匈牙利大奖赛', en:'匈牙利赛道', date:'7 月 26 日', done:1, win:'Lando Norris · 迈凯伦', h:'P5', v:'P2', w:'v', gap:'维斯塔潘快 9.460 秒',
   cap:'Hungaroring, Budapest',
   note:'维斯塔潘连续三站登上领奖台，汉密尔顿的无线电里只有一句「我需要更多动力」。'},
- {r:12,cn:'荷兰大奖赛', en:'赞德沃特', date:'8 月 23 日', done:1, win:'Lando Norris · 迈凯伦', h:'P4', v:'退赛', w:'h', gap:'维斯塔潘起步退赛',
+ {r:12,cn:'荷兰大奖赛', en:'赞德沃特', date:'8 月 23 日', done:1, win:'Lando Norris · 迈凯伦', h:'P4', v:'退赛', w:'h', gap:'维斯塔潘起步退赛', sp:{h:'P7',v:'P6',w:'v'},
   cap:'Circuit Park Zandvoort',
-  note:'维斯塔潘第二次起步阶段退赛（0 圈），红牛主场再次颗粒无收。'},
+  note:'维斯塔潘第二次起步阶段退赛（0 圈），红牛主场再次颗粒无收。冲刺赛他仍压过汉密尔顿一位。'},
  {r:13,cn:'意大利大奖赛', en:'蒙扎赛道', date:'9 月 6 日', done:1, win:'Kimi Antonelli · 梅赛德斯', h:'P6', v:'P3', w:'v', gap:'维斯塔潘快 9.937 秒',
   cap:'Autodromo Nazionale di Monza',
   note:'安东内利七连胜。维斯塔潘在蒙佐赛道把汉密尔顿压制在 10 秒之外。'},
@@ -685,9 +732,9 @@ const ROUNDS=[
   hero:S("malaysia"),
   cap:'Sepang International Circuit, Kuala Lumpur',
   note:'维斯塔潘杆位 + 夺冠，终结赛季前三站不胜，也是红牛-福特动力时代的首场胜利。'},
- {r:17,cn:'新加坡大奖赛', en:'滨海湾街道赛道 · 冲刺赛', date:'10 月 11 日', done:0,
+ {r:17,cn:'新加坡大奖赛', en:'滨海湾街道赛道 · 冲刺赛', date:'10 月 11 日', done:0, partial:1, sp:{h:'P2',v:'P1',w:'v'}, spDone:1,
   cap:'Marina Bay Street Circuit, Singapore',
-  note:'本站之后，安东内利最早可在奥斯汀封号。'},
+  note:'<b>10 月 10 日冲刺赛：维斯塔潘杆位夺冠，汉密尔顿 P2 落后 2.591 秒</b>，并跑出全场最快圈。正赛于 10 月 11 日举行，本站是安东内利最早可能的加冕地。'},
  {r:18,cn:'美国大奖赛', en:'奥斯汀 · 冲刺赛', date:'10 月 25 日', done:0,
   cap:'Circuit of the Americas, Austin',
   note:'安东内利最早可能加冕的地点。'},
@@ -717,7 +764,8 @@ const MOMENTS=[
   p:'安东内利夺冠后，汉密尔顿在第 62 圈从外线 1 号弯超越维斯塔潘拿下 P2。「能和其中一位伟大车手交手，实在太棒了。」两人完赛仅差 <b>0.508 秒</b>。',
   img:S("podium"),
   cap:'2026 加拿大站领奖台：安东内利夺冠，汉密尔顿与维斯塔潘分列二、三位'},
- {y:'2026 · 10', t:'雪邦 · 红牛-福特首胜', c:'v', p:'维斯塔潘杆位 + 夺冠，终结赛季前三站不胜，也是红牛-福特动力时代的首场胜利。'}
+ {y:'2026 · 10', t:'雪邦 · 红牛-福特首胜', c:'v', p:'维斯塔潘杆位 + 夺冠，终结赛季前三站不胜，也是红牛-福特动力时代的首场胜利。'},
+ {y:'2026 · 10', t:'新加坡冲刺赛 · 又一个 3:3', c:'v', p:'杆位起步的维斯塔潘再次拿下冲刺赛冠军，汉密尔顿 P2 落后 2.591 秒并跑出全场最快圈。算上此前五场，<b>两人的六场冲刺赛对决正好 3 : 3</b> —— 与正赛的 8 : 8 一样，谁都没能真正压过对方。'}
 ];
 
 /* ── drivers ── */
@@ -742,11 +790,11 @@ const dcard=(side,d)=>`
 const HAM={name:'Lewis Hamilton',team:'Scuderia Ferrari',nat:'英国',num:'44',chassis:'2026 Scuderia Ferrari SF-26',
  portrait:IMG.hamPortrait,car:IMG.hamCar,
  stats:[{k:'世界冠军',v:'7'},{k:'分站胜利',v:'106'},{k:'领奖台',v:'208'},{k:'杆位',v:'104'},{k:'最快圈',v:'69'}],
- dossier:[['出生','1985-01-07 · 斯蒂夫尼奇'],['生涯积分','5,232.5'],['生涯退赛','35 场'],['2026 冲刺赛','5 场 · 20 分 · 2 台 · 1 杆']]};
+ dossier:[['出生','1985-01-07 · 斯蒂夫尼奇'],['生涯积分','5,232.5'],['生涯退赛','35 场'],['2026 冲刺赛','6 场 · 27 分 · 3 台 · 1 杆']]};
 const VER={name:'Max Verstappen',team:'Oracle Red Bull Racing',nat:'荷兰',num:'1',chassis:'2026 Red Bull RB22',
  portrait:IMG.verPortrait,car:IMG.verCar,
  stats:[{k:'世界冠军',v:'4'},{k:'分站胜利',v:'72'},{k:'领奖台',v:'135'},{k:'杆位',v:'49'},{k:'最快圈',v:'37'}],
- dossier:[['出生','1997-09-30 · 哈瑟尔特'],['生涯积分','3,632.5'],['生涯退赛','37 场'],['2026 冲刺赛','5 场 · 12 分 · 0 台']]};
+ dossier:[['出生','1997-09-30 · 哈瑟尔特'],['生涯积分','3,632.5'],['生涯退赛','37 场'],['2026 冲刺赛','6 场 · 20 分 · 1 胜 · 1 台']]};
 document.getElementById('duelGrid').innerHTML =
  dcard('h',HAM)+'<div class="vsmid"><div class="x">VS</div><div class="ln"></div></div>'+dcard('v',VER);
 
@@ -891,22 +939,30 @@ function render(i){
   $('stageCap').textContent=r.cap;
   $('stRn').textContent=`ROUND ${r.r} / 23 · 2026`;
   $('stTitle').textContent=r.cn;
-  $('stMeta').textContent=`${r.en} · ${r.date}${r.done?'':' · 待赛'}`;
-  $('stWinner').innerHTML=`<div><div class="k">${r.done?'分站冠军':'本站状态'}</div><div class="v">${r.done?r.win:'尚未开赛'}</div></div>`;
+  $('stMeta').textContent=`${r.en} · ${r.date}${r.done?'':(r.partial?' · 正赛待跑':' · 待赛')}`;
+  $('stWinner').innerHTML=`<div><div class="k">${r.done?'分站冠军':(r.partial?'本站状态':'本站状态')}</div><div class="v">${r.done?r.win:(r.partial?'冲刺赛已结束 · 正赛待跑':'尚未开赛')}</div></div>`;
   if(r.done){
     const nm={h:'汉密尔顿',v:'维斯塔潘'}[r.w];
     $('stVerdict').className='verdict '+r.w;
-    $('stVerdict').innerHTML=`<div class="lab">本轮直接对决</div><div class="who">${nm} 跑得更靠前</div>`;
+    $('stVerdict').innerHTML=`<div class="lab">本轮直接对决</div><div class="who">${nm}跑得更靠前</div>`;
     $('stPair').style.display='flex';
     $('stPair').innerHTML=`<div class="p h"><div class="n">${r.h}</div><div class="t">Hamilton</div></div>
       <div class="vsx">VS</div>
       <div class="p v"><div class="n">${r.v}</div><div class="t">Verstappen</div></div>`;
   }else{
-    $('stVerdict').className='verdict d';
-    $('stVerdict').innerHTML=`<div class="lab">本轮直接对决</div><div class="who">待赛</div>`;
+    $('stVerdict').className='verdict '+(r.partial?(r.sp?r.sp.w:'d'):'d');
+    $('stVerdict').innerHTML=`<div class="lab">本轮直接对决</div><div class="who">${r.partial?'冲刺赛 '+({h:'汉密尔顿',v:'维斯塔潘'}[r.sp.w])+'在前':'待赛'}</div>`;
     $('stPair').style.display='none';
   }
   $('stGap').innerHTML=r.done?`<i class="ic">⇄</i><span>完赛差距</span><b>${r.gap}</b>`:'';
+  $('stGap').style.display=r.done?'flex':'none';
+  const spEl=$('stSprint');
+  if(r.sp){
+    spEl.style.display='block';
+    spEl.innerHTML=`<span class="spl">冲刺赛${r.done?'':' · 已跑'}</span>
+      <b class="${r.sp.w}">${r.sp.w==='h'?'汉密尔顿':'维斯塔潘'}在前</b>
+      <span class="spp">HAM ${r.sp.h} · VER ${r.sp.v}</span>`;
+  } else spEl.style.display='none';
   $('stNote').innerHTML=r.note||'';
   $('pageNo').textContent=`${i+1} / ${ROUNDS.length}`;
   $('prevBtn').disabled=i===0;
